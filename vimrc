@@ -1,12 +1,24 @@
+" Defaults and Pathogen
 execute pathogen#infect()
-syntax on
 filetype plugin indent on
-set nu
+syntax on
 
+" Some settings that aren't to my liking in vim-sensable
+set nu " Line numbers
+set title " Set window title
+set hlsearch " Highlight search terms
+
+" Use 2 spaces as tab
 set expandtab
 set tabstop=2
 set shiftwidth=2
 
+" Save backup and swap files in ~/.vim
+set swapfile
+set backup
+set dir=~/.vim/backups
+set backupdir=~/.vim/backups
+
+" Solarized color theme
 set background=dark
 colorscheme solarized
-
