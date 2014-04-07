@@ -25,3 +25,6 @@
 [submodule "vim/bundle/python-syntax"]
 	path = vim/bundle/python-syntax
 	url = git@github.com:hdima/python-syntax.git
+[submodule "vim/bundle/vim-jade"]
+	path = vim/bundle/vim-jade
+	url = git@github.com:digitaltoad/vim-jade.git
