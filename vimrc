@@ -11,6 +11,8 @@ set laststatus=2
 
 " airline stuff
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Use 2 spaces as tab
 set expandtab
