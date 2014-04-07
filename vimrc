@@ -9,6 +9,7 @@ let mapleader = ","
 
 " General settings
 set nu " Line numbers
+set rnu " Set relative line numbers
 set title " Set window title
 set scrolloff=3 " Keep at least 3 lines visible above + below cursor
 set cursorline " Highlight the current line
@@ -16,7 +17,6 @@ set showmode " Show current file mode
 set wildmenu " expand wildcards in commands on <tab>
 set wildmode=list:longest
 set ttyfast " Force vim to think we're on a fast tty connection (we are)
-set rnu " Set relative line numbers
 set visualbell " visual bell instead of audio
 
 " reload current vimrc
