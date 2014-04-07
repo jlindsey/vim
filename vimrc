@@ -7,6 +7,10 @@ syntax on
 set nu " Line numbers
 set title " Set window title
 set hlsearch " Highlight search terms
+set laststatus=2
+
+" airline stuff
+let g:airline_powerline_fonts = 1
 
 " Use 2 spaces as tab
 set expandtab
