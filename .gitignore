@@ -1,3 +1,4 @@
-vim/backups/*.swp
-vim/backups/*~
+vim/backups/*
+!.gitkeep
 .netrwhist
+

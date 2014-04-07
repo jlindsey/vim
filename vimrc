@@ -44,6 +44,9 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
+" Open Unite
+nmap <leader><leader> :Unite file buffer<cr>
+
 " Searching
 set ignorecase 
 set smartcase " intelligently deal with case-sensative search
@@ -76,7 +79,7 @@ set softtabstop=2
 " Save backup and swap files in ~/.vim
 set swapfile
 set backup
-set undofile  " persist file undo history
+set undofile " persist file undo history
 set dir=~/.vim/backups
 set backupdir=~/.vim/backups
 set undodir=~/.vim/backups
