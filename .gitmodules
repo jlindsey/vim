@@ -22,3 +22,6 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
+[submodule "vim/bundle/python-syntax"]
+	path = vim/bundle/python-syntax
+	url = git@github.com:hdima/python-syntax.git
