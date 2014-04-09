@@ -31,7 +31,7 @@ nmap <leader>l :bnext<cr>
 " ,h Previous buffer
 nmap <leader>h :bprevious<cr>
 " ,bq Close current buffer and move to the previous one
-nmap <leader>bq :bp <bar> bd #<cr>
+nmap <leader>q :bp <bar> bd #<cr>
 " Show all open buffers
 nmap <leader>bl :ls<cr>
 
@@ -44,8 +44,14 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-" Open Unite
+" Unite
+" Open a file search
 nmap <leader><leader> :Unite file buffer<cr>
+" Open an ack search
+nmap <leader>/ :Unite grep:.<cr>
+
+" multi-cursor
+let g:multi_cursor_next_ke = '<C-d>'
 
 " Searching
 set ignorecase 
@@ -74,7 +80,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 set expandtab
 set tabstop=2
 set shiftwidth=2
-set softtabstop=2
 
 " Save backup and swap files in ~/.vim
 set swapfile
@@ -117,4 +122,12 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" syntastic
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_quiet_messages = { "regex": ['\m\[missing-docstring\]', '\m\[.*wildcard-import\]'] }
+
+" Language-specific
+au Syntax python set tabstop=4
+au Syntax python set shiftwidth=4
 
