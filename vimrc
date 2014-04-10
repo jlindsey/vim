@@ -54,11 +54,11 @@ nmap <leader>/ :Unite grep:.<cr>
 let g:multi_cursor_next_ke = '<C-d>'
 
 " Searching
-set ignorecase 
+set ignorecase
 set smartcase " intelligently deal with case-sensative search
 set gdefault " default global replace
 set incsearch
-set showmatch 
+set showmatch
 set hlsearch " Highlight search terms
 " Clear current seach with ,<space>
 nmap <leader><space> :noh<cr>
@@ -68,7 +68,7 @@ vnoremap <tab> %
 
 " show hidden characters
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=eol:¬,tab:→\ ,extends:>,precedes:<,trail:…
 
 " airline stuff
 set laststatus=2
