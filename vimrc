@@ -95,7 +95,7 @@ colorscheme solarized
 
 " Password management
 set cryptmethod=blowfish
-autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup viminfo= nobackup noshelltemp history=0 secure | endif
+au BufReadPost * if &key != "" | set noswapfile nowritebackup viminfo= nobackup noshelltemp history=0 secure | endif
 
 " rainbow parens
 let g:rbpt_colorpairs = [
@@ -127,7 +127,14 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_quiet_messages = { "regex": ['\m\[missing-docstring\]', '\m\[.*wildcard-import\]'] }
 
+" NERDtree
+au VimEnter * NERDTree
+au VimEnter * if !argc() | NERDTree | endif
+au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+nmap <leader>N :NERDTree<cr>
+
 " Language-specific
 au Syntax python set tabstop=4
 au Syntax python set shiftwidth=4
+
 
