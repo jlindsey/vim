@@ -39,10 +39,20 @@ nmap <leader>bl :ls<cr>
 " ,w vertical split current file and switch to it
 nmap <leader>w <C-w>s<C-W>l
 " movement
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+nno <C-h> <C-w>h
+nno <C-j> <C-w>j
+nno <C-k> <C-w>k
+nno <C-l> <C-w>l
+nno <up> <nop>
+nno <down> <nop>
+nno <left> <nop>
+nno <right> <nop>
+ino <up> <nop>
+ino <down> <nop>
+ino <left> <nop>
+ino <right> <nop>
+nno j gj
+nno k gk
 
 " Unite
 " Open a file search
@@ -88,6 +98,7 @@ set undofile " persist file undo history
 set dir=~/.vim/backups
 set backupdir=~/.vim/backups
 set undodir=~/.vim/backups
+au FocusLost * :wa " Autosave
 
 " Solarized color theme
 set background=dark
@@ -128,9 +139,12 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_quiet_messages = { "regex": ['\m\[missing-docstring\]', '\m\[.*wildcard-import\]'] }
 
 " NERDtree
-au VimEnter * NERDTree
-au VimEnter * if !argc() | NERDTree | endif
-au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+au VimEnter * call AutoOpenNERDTree()
+function! AutoOpenNERDTree()
+  NERDTree
+  call feedkeys("\<C-l>")
+endfunction
+au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nmap <leader>N :NERDTree<cr>
 
 " Language-specific
