@@ -27,9 +27,9 @@ set hidden
 " ,t Open a new empty buffer
 nmap <leader>T :enew<cr>
 " ,l Next buffer
-nmap <leader>] :bnext<cr>
+nmap <leader>l :bnext<cr>
 " ,h Previous buffer
-nmap <leader>[ :bprevious<cr>
+nmap <leader>k :bprevious<cr>
 " ,bq Close current buffer and move to the previous one
 nmap <leader>q :bp <bar> bd #<cr>
 " Show all open buffers
@@ -47,10 +47,10 @@ nno <up> <nop>
 nno <down> <nop>
 nno <left> <nop>
 nno <right> <nop>
-ino <up> <nop>
-ino <down> <nop>
-ino <left> <nop>
-ino <right> <nop>
+vno <up> <nop>
+vno <down> <nop>
+vno <left> <nop>
+vno <right> <nop>
 nno j gj
 nno k gk
 
