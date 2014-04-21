@@ -1,4 +1,7 @@
 vim/backups/*
+vim/plugin/
+vim/doc/
+vim/record/
 !.gitkeep
 .netrwhist
 
