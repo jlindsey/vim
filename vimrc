@@ -18,6 +18,8 @@ set wildmenu " expand wildcards in commands on <tab>
 set wildmode=list:longest
 set ttyfast " Force vim to think we're on a fast tty connection (we are)
 set visualbell " visual bell instead of audio
+set autoread
+set autowrite
 
 " reload current vimrc
 nmap <leader>R :so $MYVIMRC<cr>
