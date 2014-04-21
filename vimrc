@@ -56,6 +56,9 @@ vno <right> <nop>
 nno j gj
 nno k gk
 
+" Clipboard copy
+vno <C-c> "+y
+
 " Unite
 " Open a file search
 nmap <leader><leader> :Unite file buffer<cr>
