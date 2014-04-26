@@ -30,8 +30,10 @@ set hidden
 nmap <leader>T :enew<cr>
 " ,l Next buffer
 nmap <leader>j :bnext<cr>
+nno gt :bnext<cr>
 " ,h Previous buffer
 nmap <leader>k :bprevious<cr>
+nno gT :bnext<cr>
 " ,q Close current buffer and move to the previous one
 nmap <leader>q :bp <bar> bd #<cr>
 " Show all open buffers
@@ -144,11 +146,6 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_quiet_messages = { "regex": ['\m\[missing-docstring\]', '\m\[.*wildcard-import\]'] }
 
 " NERDtree
-au VimEnter * call AutoOpenNERDTree()
-function! AutoOpenNERDTree()
-  NERDTree
-  call feedkeys("\<C-l>")
-endfunction
 au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nmap <leader>N :NERDTree<cr>
 
