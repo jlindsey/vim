@@ -33,7 +33,7 @@ nmap <leader>j :bnext<cr>
 nno gt :bnext<cr>
 " ,h Previous buffer
 nmap <leader>k :bprevious<cr>
-nno gT :bnext<cr>
+nno gT :bprevious<cr>
 " ,q Close current buffer and move to the previous one
 nmap <leader>q :bp <bar> bd #<cr>
 " Show all open buffers
@@ -142,13 +142,13 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 " Jekyll
-let g:jekyll_post_extension = '.md'
+let g:jekyll_post_extension = '.markdown'
 let g:jekyll_post_filetype = 'markdown'
 let g:jekyll_build_command = 'bundle exec jekyll build BLOG_ROOT'
 
 " syntastic
-let g:syntastic_python_checkers = ['pylint']
-let g:syntastic_quiet_messages = { "regex": ['\m\[missing-docstring\]', '\m\[.*wildcard-import\]'] }
+let g:syntastic_python_checkers = ['pylint', 'pyflakes']
+"let g:syntastic_quiet_messages = { "regex": ['\m\[missing-docstring\]', '\m\[.*wildcard-import\]'] }
 
 " NERDtree
 au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -158,4 +158,6 @@ nmap <leader>N :NERDTree<cr>
 au Syntax python set tabstop=4
 au Syntax python set shiftwidth=4
 
+au Syntax markdown setl textwidth=110
+au Syntax markdown setl formatoptions=aw2tq
 
