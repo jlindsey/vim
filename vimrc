@@ -58,6 +58,9 @@ vno <right> <nop>
 nno j gj
 nno k gk
 
+" ctrl-p.vim
+nno <leader><leader> :CtrlP<cr>
+
 " Clipboard copy
 vno <C-c> "+y
 
