@@ -61,12 +61,6 @@ nno k gk
 " Clipboard copy
 vno <C-c> "+y
 
-" Unite
-" Open a file search
-nmap <leader><leader> :Unite file buffer<cr>
-" Open an ack search
-nmap <leader>/ :Unite grep:.<cr>
-
 " multi-cursor
 let g:multi_cursor_next_ke = '<C-d>'
 
@@ -148,7 +142,9 @@ let g:jekyll_build_command = 'bundle exec jekyll build BLOG_ROOT'
 
 " syntastic
 let g:syntastic_python_checkers = ['pylint', 'pyflakes']
-"let g:syntastic_quiet_messages = { "regex": ['\m\[missing-docstring\]', '\m\[.*wildcard-import\]'] }
+let g:syntastic_ruby_checkers = ['ruby-lint', 'ruby']
+let g:syntastic_rails_checkers = ['ruby-lint', 'ruby']
+let g:syntastic_quiet_messages = { "regex": ['\m\[line-too-long\]'] }
 
 " NERDtree
 au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
