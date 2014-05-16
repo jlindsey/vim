@@ -153,6 +153,9 @@ let g:syntastic_quiet_messages = { "regex": ['\m\[line-too-long\]'] }
 let g:ack_use_dispatch = 1
 let g:ack_autofold_results = 1
 
+" indentLine
+let g:indentLine_char = '┆'
+
 " NERDtree
 au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nmap <leader>N :NERDTree<cr>
