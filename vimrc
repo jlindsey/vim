@@ -149,6 +149,10 @@ let g:syntastic_ruby_checkers = ['ruby-lint', 'ruby']
 let g:syntastic_rails_checkers = ['ruby-lint', 'ruby']
 let g:syntastic_quiet_messages = { "regex": ['\m\[line-too-long\]'] }
 
+" ack
+let g:ack_use_dispatch = 1
+let g:ack_autofold_results = 1
+
 " NERDtree
 au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nmap <leader>N :NERDTree<cr>
