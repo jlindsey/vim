@@ -145,9 +145,8 @@ let g:jekyll_build_command = 'bundle exec jekyll build BLOG_ROOT'
 
 " syntastic
 let g:syntastic_python_checkers = ['pylint', 'pyflakes']
-let g:syntastic_ruby_checkers = ['ruby-lint', 'ruby']
-let g:syntastic_rails_checkers = ['ruby-lint', 'ruby']
-let g:syntastic_quiet_messages = { "regex": ['\m\[line-too-long\]'] }
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_quiet_messages = { "regex": ['trailing blank line', 'explicit non-nil'] }
 
 " ack
 let g:ack_use_dispatch = 1
