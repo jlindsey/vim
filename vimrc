@@ -155,6 +155,10 @@ let g:ack_autofold_results = 1
 " indentLine
 let g:indentLine_char = '┆'
 
+" csv
+let b:csv_arrange_leftalign = 1
+let g:csv_autocmd_arrange = 1
+
 " NERDtree
 au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nmap <leader>N :NERDTree<cr>
