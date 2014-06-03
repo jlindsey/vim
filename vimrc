@@ -18,6 +18,7 @@ set wildmenu " expand wildcards in commands on <tab>
 set wildmode=list:longest
 set ttyfast " Force vim to think we're on a fast tty connection (we are)
 set visualbell " visual bell instead of audio
+set modeline " Allow modelines
 set autoread
 set autowrite
 
@@ -58,14 +59,8 @@ vno <right> <nop>
 nno j gj
 nno k gk
 
-" ctrl-p.vim
-nno <C-p> :CtrlP<cr>
-
 " Clipboard copy
 vno <C-c> "+y
-
-" multi-cursor
-let g:multi_cursor_next_ke = '<C-d>'
 
 " Searching
 set ignorecase
@@ -84,7 +79,7 @@ vnoremap <tab> %
 set list
 set listchars=eol:¬,tab:→\ ,extends:>,precedes:<,trail:…
 
-" airline stuff
+" airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -138,6 +133,9 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" multi-cursor
+let g:multi_cursor_next_ke = '<C-d>'
+
 " Jekyll
 let g:jekyll_post_extension = '.markdown'
 let g:jekyll_post_filetype = 'markdown'
@@ -152,6 +150,9 @@ let g:syntastic_quiet_messages = { "regex": ['trailing blank line', 'explicit no
 let g:ack_use_dispatch = 1
 let g:ack_autofold_results = 1
 
+" ctrl-p.vim
+nno <C-p> :CtrlP<cr>
+
 " indentLine
 let g:indentLine_char = '┆'
 
@@ -163,6 +164,9 @@ let g:csv_autocmd_arrange = 1
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
+
+" Supertab
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " NERDtree
 au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
