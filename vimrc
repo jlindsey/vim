@@ -159,6 +159,11 @@ let g:indentLine_char = '┆'
 let b:csv_arrange_leftalign = 1
 let g:csv_autocmd_arrange = 1
 
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+
 " NERDtree
 au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nmap <leader>N :NERDTree<cr>
