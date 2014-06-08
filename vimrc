@@ -136,6 +136,9 @@ au Syntax * RainbowParenthesesLoadBraces
 " multi-cursor
 let g:multi_cursor_next_ke = '<C-d>'
 
+" easytags
+let g:easytags_updatetime_warn = 0
+
 " Jekyll
 let g:jekyll_post_extension = '.markdown'
 let g:jekyll_post_filetype = 'markdown'
@@ -160,10 +163,13 @@ let g:indentLine_char = '┆'
 let b:csv_arrange_leftalign = 1
 let g:csv_autocmd_arrange = 1
 
-" Neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+" YCM
+set omnifunc=syntaxcomplete#Complete
+let g:EclimCompletionMethod = 'omnifunc'
+let g:ycm_min_num_of_chars_for_completion = 3
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_complete_in_strings = 0
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -171,6 +177,9 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " NERDtree
 au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 nmap <leader>N :NERDTree<cr>
+
+" VimShell
+nno <leader>S :VimShellInteractive bundle exec rails c<cr>
 
 " Language-specific
 au Syntax python set tabstop=4
