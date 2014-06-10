@@ -165,7 +165,6 @@ let g:csv_autocmd_arrange = 1
 
 " YCM
 set omnifunc=syntaxcomplete#Complete
-let g:EclimCompletionMethod = 'omnifunc'
 let g:ycm_min_num_of_chars_for_completion = 3
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_complete_in_strings = 0
