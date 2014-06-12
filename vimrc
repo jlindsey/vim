@@ -163,12 +163,23 @@ let g:indentLine_char = '┆'
 let b:csv_arrange_leftalign = 1
 let g:csv_autocmd_arrange = 1
 
-" YCM
+" neocomplete
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_auto_select = 1
+" neocomplete - ruby / rails specific
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
+" neocomplete omnifuncs
 set omnifunc=syntaxcomplete#Complete
-let g:ycm_min_num_of_chars_for_completion = 3
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_complete_in_strings = 0
-let g:ycm_collect_identifiers_from_tags_files = 1
+au FileType css setlocal omnifunc=csscomplete#CompleteCSS
+au FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+au FileType python setlocal omnifunc=pythoncomplete#Complete
+au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
@@ -178,12 +189,13 @@ au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType 
 nmap <leader>N :NERDTree<cr>
 
 " VimShell
+nno <leader>s :VimShell
 nno <leader>S :VimShellInteractive bundle exec rails c<cr>
 
 " Language-specific
-au Syntax python set tabstop=4
-au Syntax python set shiftwidth=4
+au Syntax python setlocal tabstop=4
+au Syntax python setlocal shiftwidth=4
 
-au Syntax markdown setl textwidth=110
-au Syntax markdown setl formatoptions=aw2tq
+au Syntax markdown setlocal textwidth=110
+au Syntax markdown setlocal formatoptions=aw2tq
 
