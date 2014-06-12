@@ -43,9 +43,6 @@
 [submodule "vim/bundle/vim-indent-guides"]
 	path = vim/bundle/vim-indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
 [submodule "vim/bundle/vim-virtualenv"]
 	path = vim/bundle/vim-virtualenv
 	url = git@github.com:jmcantrell/vim-virtualenv.git
@@ -79,3 +76,6 @@
 [submodule "vim/bundle/neocomplete.vim"]
 	path = vim/bundle/neocomplete.vim
 	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "vim/bundle/vim-vinegar"]
+	path = vim/bundle/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar.git

@@ -184,10 +184,6 @@ au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
-" NERDtree
-au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-nmap <leader>N :NERDTree<cr>
-
 " VimShell
 nno <leader>s :VimShell
 nno <leader>S :VimShellInteractive bundle exec rails c<cr>
