@@ -4,15 +4,9 @@
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/vim-ruby"]
-	path = vim/bundle/vim-ruby
-	url = git@github.com:vim-ruby/vim-ruby.git
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
 	url = git://github.com/tpope/vim-rails.git
-[submodule "vim/bundle/vim-fish"]
-	path = vim/bundle/vim-fish
-	url = git@github.com:dag/vim-fish.git
 [submodule "vim/bundle/vim-bundler"]
 	path = vim/bundle/vim-bundler
 	url = git://github.com/tpope/vim-bundler.git
@@ -22,21 +16,9 @@
 [submodule "vim/bundle/tagbar"]
 	path = vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
-[submodule "vim/bundle/python-syntax"]
-	path = vim/bundle/python-syntax
-	url = git@github.com:hdima/python-syntax.git
-[submodule "vim/bundle/vim-jade"]
-	path = vim/bundle/vim-jade
-	url = git@github.com:digitaltoad/vim-jade.git
-[submodule "vim/bundle/vim-coffee-script"]
-	path = vim/bundle/vim-coffee-script
-	url = git@github.com:kchmck/vim-coffee-script.git
 [submodule "vim/bundle/eregex.vim"]
 	path = vim/bundle/eregex.vim
 	url = git@github.com:othree/eregex.vim.git
-[submodule "vim/bundle/Dockerfile.vim"]
-	path = vim/bundle/Dockerfile.vim
-	url = git@github.com:ekalinin/Dockerfile.vim.git
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
@@ -55,12 +37,6 @@
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
 	url = git@github.com:mileszs/ack.vim.git
-[submodule "vim/bundle/Better-CSS-Syntax-for-Vim"]
-	path = vim/bundle/Better-CSS-Syntax-for-Vim
-	url = git@github.com:ChrisYip/Better-CSS-Syntax-for-Vim.git
-[submodule "vim/bundle/vim-css3-syntax"]
-	path = vim/bundle/vim-css3-syntax
-	url = git@github.com:hail2u/vim-css3-syntax.git
 [submodule "vim/bundle/vim-dispatch"]
 	path = vim/bundle/vim-dispatch
 	url = git@github.com:tpope/vim-dispatch.git
@@ -76,12 +52,6 @@
 [submodule "vim/bundle/vim-jekyll"]
 	path = vim/bundle/vim-jekyll
 	url = git@github.com:itspriddle/vim-jekyll.git
-[submodule "vim/bundle/vim-markdown"]
-	path = vim/bundle/vim-markdown
-	url = git@github.com:tpope/vim-markdown.git
-[submodule "vim/bundle/nginx-vim-syntax"]
-	path = vim/bundle/nginx-vim-syntax
-	url = git@github.com:evanmiller/nginx-vim-syntax.git
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = git@github.com:kien/ctrlp.vim.git
@@ -94,12 +64,6 @@
 [submodule "vim/bundle/vim-misc"]
 	path = vim/bundle/vim-misc
 	url = https://github.com/xolox/vim-misc.git
-[submodule "vim/bundle/vim-slim"]
-	path = vim/bundle/vim-slim
-	url = https://github.com/slim-template/vim-slim.git
-[submodule "vim/bundle/csv.vim"]
-	path = vim/bundle/csv.vim
-	url = https://github.com/chrisbra/csv.vim
 [submodule "vim/bundle/vim-easymotion"]
 	path = vim/bundle/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
@@ -112,3 +76,6 @@
 [submodule "vim/bundle/YouCompleteMe"]
 	path = vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "vim/bundle/vim-polyglot"]
+	path = vim/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
