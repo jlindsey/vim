@@ -4,4 +4,6 @@ vim/doc/
 vim/record/
 !.gitkeep
 .netrwhist
+.mkrecord
+install.log
 
