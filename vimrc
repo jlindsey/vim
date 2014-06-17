@@ -167,7 +167,20 @@ let g:csv_autocmd_arrange = 1
 let g:acp_enableAtStartup = 0
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#force_overwrite_completefunc = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+" neocomplete - Dicts
+let g:neocomplete#sources#dictionary#dictionaries = {'default' : '', 'vimshell' : $HOME.'/.vimshell_hist'}
+" neocomplete - Keywords
+if !exists('g:neocomplete#keyword_patterns')
+  let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+" neocomplete - heavy omni compl
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
 " neocomplete - ruby / rails specific
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
@@ -185,7 +198,7 @@ au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " VimShell
-nno <leader>s :VimShell
+nno <leader>s :VimShell<cr>
 nno <leader>S :VimShellInteractive bundle exec rails c<cr>
 
 " Language-specific
