@@ -14,5 +14,5 @@ A few of the plugins have additional manual installation steps:
 
 * For **YouCompleteMe**: `cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer`
 * For **eregex.vim**: `cd ~/.vim/bundle/eregex.vim && make && make install`
-* For **vimproc.vim**: `cd ~/.vim/bundle/vimproc && make`
+* For **vimproc.vim**: `cd ~/.vim/bundle/vimproc.vim && make`
 
