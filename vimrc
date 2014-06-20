@@ -1,6 +1,46 @@
-" Defaults and Pathogen
+"" Vundle
+set nocp
 filetype off
-execute pathogen#infect()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+"" Plugins
+Plugin 'gmarik/Vundle.vim' " Required
+
+" the pope's blessings
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-vinegar'
+Plugin 'tpope/vim-leiningen'
+Plugin 'tpope/vim-projectionist'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-classpath'
+
+"Plugin 'majutsushi/tagbar'
+"Plugin 'ervandew/supertab.git'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimshell.vim'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'othree/eregex.vim'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'scrooloose/syntastic'
+Plugin 'mileszs/ack.vim'
+Plugin 'jmcantrell/vim-virtualenv'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'idanarye/vim-merginal'
+Plugin 'guns/vim-clojure-static'
+Plugin 'guns/vim-clojure-highlight'
+
+call vundle#end()
 filetype plugin indent on
 syntax on
 
@@ -136,14 +176,6 @@ au Syntax * RainbowParenthesesLoadBraces
 " multi-cursor
 let g:multi_cursor_next_ke = '<C-d>'
 
-" easytags
-let g:easytags_updatetime_warn = 0
-
-" Jekyll
-let g:jekyll_post_extension = '.markdown'
-let g:jekyll_post_filetype = 'markdown'
-let g:jekyll_build_command = 'bundle exec jekyll build BLOG_ROOT'
-
 " syntastic
 let g:syntastic_python_checkers = ['pylint', 'pyflakes']
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
@@ -154,9 +186,6 @@ let g:ack_autofold_results = 1
 
 " ctrl-p.vim
 nno <C-p> :CtrlP<cr>
-
-" indentLine
-let g:indentLine_char = '┆'
 
 " csv
 let b:csv_arrange_leftalign = 1
@@ -170,13 +199,9 @@ let g:ycm_complete_in_comments = 0
 let g:ycm_complete_in_strings = 0
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
-" neocomplete
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
-
-" Supertab
-let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " VimShell
 nno <leader>s :VimShell<cr>
