@@ -146,8 +146,7 @@ let g:jekyll_build_command = 'bundle exec jekyll build BLOG_ROOT'
 
 " syntastic
 let g:syntastic_python_checkers = ['pylint', 'pyflakes']
-let g:syntastic_ruby_checkers = ['mri']
-let g:syntastic_quiet_messages = { "regex": ['trailing blank line', 'explicit non-nil'] }
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 " ack
 let g:ack_use_dispatch = 1
@@ -163,36 +162,18 @@ let g:indentLine_char = '┆'
 let b:csv_arrange_leftalign = 1
 let g:csv_autocmd_arrange = 1
 
+"YCM
+let g:ycm_warning_symbol = '>>'
+let g:ycm_error_symbol = '!!'
+let g:ycm_allow_changing_updatetime = 1
+let g:ycm_complete_in_comments = 0
+let g:ycm_complete_in_strings = 0
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_seed_identifiers_with_syntax = 1
 " neocomplete
-let g:acp_enableAtStartup = 0
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#force_overwrite_completefunc = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-" neocomplete - Dicts
-let g:neocomplete#sources#dictionary#dictionaries = {'default' : '', 'vimshell' : $HOME.'/.vimshell_hist'}
-" neocomplete - Keywords
-if !exists('g:neocomplete#keyword_patterns')
-  let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-" neocomplete - heavy omni compl
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-" neocomplete - ruby / rails specific
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
-" neocomplete omnifuncs
-set omnifunc=syntaxcomplete#Complete
-au FileType css setlocal omnifunc=csscomplete#CompleteCSS
-au FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-au FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-au FileType python setlocal omnifunc=pythoncomplete#Complete
-au FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
