@@ -27,6 +27,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/vimshell.vim'
+Plugin 'craigemery/vim-autotag'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -177,7 +178,8 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:multi_cursor_next_ke = '<C-d>'
 
 " syntastic
-let g:syntastic_python_checkers = ['pylint', 'pyflakes']
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checker_args = '--max-complexity=12'
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 " ack
