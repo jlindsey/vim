@@ -20,8 +20,8 @@ Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-classpath'
 
-"Plugin 'majutsushi/tagbar'
 "Plugin 'ervandew/supertab.git'
+"Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'Valloric/YouCompleteMe'
@@ -36,11 +36,13 @@ Plugin 'othree/eregex.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/syntastic'
 Plugin 'mileszs/ack.vim'
-Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'idanarye/vim-merginal'
 Plugin 'guns/vim-clojure-static'
 Plugin 'guns/vim-clojure-highlight'
+Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'majutsushi/tagbar'
+Plugin 'tomtom/tcomment_vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -150,6 +152,7 @@ set cryptmethod=blowfish
 au BufReadPost * if &key != "" | set noswapfile nowritebackup viminfo= nobackup noshelltemp history=0 secure | endif
 
 " rainbow parens
+    "\ ['black',       'SeaGreen3'],
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
@@ -160,7 +163,6 @@ let g:rbpt_colorpairs = [
     \ ['darkmagenta', 'DarkOrchid3'],
     \ ['brown',       'firebrick3'],
     \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
     \ ['darkmagenta', 'DarkOrchid3'],
     \ ['Darkblue',    'firebrick3'],
     \ ['darkgreen',   'RoyalBlue3'],
@@ -179,7 +181,7 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:multi_cursor_next_ke = '<C-d>'
 
 " syntastic
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['python', 'flake8']
 let g:syntastic_python_checker_args = '--max-complexity=12'
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
@@ -195,6 +197,7 @@ let b:csv_arrange_leftalign = 1
 let g:csv_autocmd_arrange = 1
 
 "YCM
+set completeopt-=preview
 let g:ycm_warning_symbol = '>>'
 let g:ycm_error_symbol = '!!'
 let g:ycm_allow_changing_updatetime = 1
@@ -202,6 +205,7 @@ let g:ycm_complete_in_comments = 0
 let g:ycm_complete_in_strings = 0
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_add_preview_to_completeopt = 0
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
