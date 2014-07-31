@@ -46,6 +46,9 @@ syntax on
 " remap <leader> to ,
 let mapleader = ","
 
+" Command Abbreviations
+ca !! VimProcBang
+
 " General settings
 set nu " Line numbers
 set rnu " Set relative line numbers
@@ -60,6 +63,7 @@ set visualbell " visual bell instead of audio
 set modeline " Allow modelines
 set autoread
 set autowrite
+set grepprg=ack
 
 " reload current vimrc
 nmap <leader>R :so $MYVIMRC<cr>
@@ -146,25 +150,17 @@ colorscheme solarized
 set cryptmethod=blowfish
 au BufReadPost * if &key != "" | set noswapfile nowritebackup viminfo= nobackup noshelltemp history=0 secure | endif
 
-" rainbow parens
-    "\ ['black',       'SeaGreen3'],
+"  Parentheses colours using Solarized
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+  \ [ '13', '#6c71c4'],
+  \ [ '5',  '#d33682'],
+  \ [ '1',  '#dc322f'],
+  \ [ '9',  '#cb4b16'],
+  \ [ '3',  '#b58900'],
+  \ [ '2',  '#859900'],
+  \ [ '6',  '#2aa198'],
+  \ [ '4',  '#268bd2'],
+  \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 au VimEnter * RainbowParenthesesToggle
