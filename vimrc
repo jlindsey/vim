@@ -187,6 +187,9 @@ nno <C-p> :CtrlP<cr>
 let b:csv_arrange_leftalign = 1
 let g:csv_autocmd_arrange = 1
 
+" gitgutter
+let g:gitgutter_max_signs = 10000
+
 "YCM
 set completeopt-=preview
 let g:ycm_warning_symbol = '>>'
