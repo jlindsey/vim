@@ -20,7 +20,7 @@ Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-classpath'
 
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'luckydev/150colors'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/vimproc.vim'
@@ -38,7 +38,6 @@ Plugin 'guns/vim-clojure-highlight'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'vim-scripts/ZoomWin'
 
 call vundle#end()
 filetype plugin indent on
@@ -65,6 +64,10 @@ set modeline " Allow modelines
 set autoread
 set autowrite
 set grepprg=ack
+
+" Color
+set background=dark
+colorscheme railscasts2
 
 " reload current vimrc
 nmap <leader>R :so $MYVIMRC<cr>
@@ -143,9 +146,6 @@ set backupdir=~/.vim/backups
 set undodir=~/.vim/backups
 au FocusLost * :wa " Autosave
 
-" Solarized color theme
-set background=dark
-colorscheme solarized
 
 " Password management
 set cryptmethod=blowfish
