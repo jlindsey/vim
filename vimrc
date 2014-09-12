@@ -29,7 +29,8 @@ Plugin 'Shougo/vimshell.vim'
 Plugin 'craigemery/vim-autotag'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'kien/ctrlp.vim'
+"Plugin 'kien/ctrlp.vim'
+Plugin 'Shougo/unite.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/syntastic'
@@ -189,8 +190,11 @@ let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:ack_use_dispatch = 1
 let g:ack_autofold_results = 1
 
-" ctrl-p.vim
-nno <C-p> :CtrlP<cr>
+" Unite
+let g:unite_source_history_yank_enable = 1
+nno <C-p> :Unite file_rec/async<cr>
+nno <leader>/ :Unite grep:.<cr>
+nno <leader>y :Unite history/yank<cr>
 
 " csv
 let b:csv_arrange_leftalign = 1
