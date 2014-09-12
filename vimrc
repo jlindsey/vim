@@ -22,8 +22,10 @@ Plugin 'tpope/vim-classpath'
 
 Plugin 'luckydev/150colors'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/vimshell.vim'
 Plugin 'craigemery/vim-autotag'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
@@ -38,6 +40,7 @@ Plugin 'guns/vim-clojure-highlight'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 call vundle#end()
 filetype plugin indent on
@@ -67,7 +70,13 @@ set grepprg=ack
 
 " Color
 set background=dark
-colorscheme railscasts2
+"colorscheme railscasts2
+colorscheme solarized
+
+" ctags
+set tags=.git/tags,tags
+nno <silent> <leader>ct :silent Dispatch! git ctags<cr>
+au BufWrite * silent Dispatch! git ctags
 
 " reload current vimrc
 nmap <leader>R :so $MYVIMRC<cr>
@@ -146,7 +155,6 @@ set backupdir=~/.vim/backups
 set undodir=~/.vim/backups
 au FocusLost * :wa " Autosave
 
-
 " Password management
 set cryptmethod=blowfish
 au BufReadPost * if &key != "" | set noswapfile nowritebackup viminfo= nobackup noshelltemp history=0 secure | endif
@@ -193,17 +201,32 @@ let g:gitgutter_max_signs = 10000
 
 "YCM
 set completeopt-=preview
-let g:ycm_warning_symbol = '>>'
-let g:ycm_error_symbol = '!!'
-let g:ycm_allow_changing_updatetime = 1
-let g:ycm_complete_in_comments = 0
-let g:ycm_complete_in_strings = 0
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_add_preview_to_completeopt = 0
+"let g:ycm_warning_symbol = '>>'
+"let g:ycm_error_symbol = '!!'
+"let g:ycm_allow_changing_updatetime = 1
+"let g:ycm_complete_in_comments = 0
+"let g:ycm_complete_in_strings = 0
+"let g:ycm_collect_identifiers_from_tags_files = 1
+"let g:ycm_seed_identifiers_with_syntax = 1
+"let g:ycm_add_preview_to_completeopt = 0
+
+" Neocomplete
+let g:neocomplete#enable_at_startup = 1
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
+let g:neocomplete#force_overwrite_completefunc = 1
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplete#close_popup() . "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
 
 " VimShell
 nno <leader>s :VimShell<cr>
