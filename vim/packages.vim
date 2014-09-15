@@ -19,6 +19,9 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Shougo/neomru.vim'
+" Unite plugins
+Plugin 'kannokanno/unite-todo'
+Plugin 'h1mesuke/unite-outline'
 " Everything else
 Plugin 'luckydev/150colors'
 Plugin 'sheerun/vim-polyglot'
