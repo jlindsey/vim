@@ -39,4 +39,5 @@ Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'majutsushi/tagbar'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'vim-scripts/dbext.vim'
 

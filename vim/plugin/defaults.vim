@@ -19,7 +19,8 @@ set grepprg=ack
 " Color
 set background=dark
 "colorscheme railscasts2
-colorscheme solarized
+"colorscheme solarized
+colorscheme vividchalk
 " show hidden characters
 set list
 set listchars=eol:¬,tab:→\ ,extends:>,precedes:<,trail:…

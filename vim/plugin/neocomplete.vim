@@ -1,11 +1,16 @@
 " Neocomplete
 let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#force_overwrite_completefunc = 1
+let g:neocomplete#force_overwrite_completefunc = 0
+let g:neocomplete#enable_prefetch = 1
+let g:neocomplete#enable_refresh_always = 1
+let g:neocomplete#enable_omni_fallback = 1
+let g:neocomplete#use_vimproc = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#min_keyword_length = 3
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
+let g:neocomplete#ctags_command = 'git ctags'
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplete#close_popup() . "\<CR>"
@@ -26,10 +31,16 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Enable heavy omni completion.
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
 endif
-let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.cpp =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\%(\h\w*\)\?'
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby =
+      \ '[^. *\t]\.\w*\|\h\w*::'
 
