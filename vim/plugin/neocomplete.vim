@@ -2,7 +2,6 @@
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#force_overwrite_completefunc = 0
 let g:neocomplete#enable_prefetch = 1
-let g:neocomplete#enable_refresh_always = 1
 let g:neocomplete#enable_omni_fallback = 1
 let g:neocomplete#use_vimproc = 1
 let g:neocomplete#enable_smart_case = 1

@@ -103,12 +103,3 @@ com Wq wq
 com WQ wq
 com Qw wq
 com QW wq
-
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-augroup MyAutoCmd
-  autocmd BufWinEnter * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+$/ | endif
-  autocmd InsertEnter * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+\%#\@<!$/ | endif
-  autocmd InsertLeave * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+$/ | endif
-  autocmd BufWinLeave * if &modifiable && &ft!='unite' | call clearmatches() | endif
-augroup END

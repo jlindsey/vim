@@ -40,22 +40,24 @@ if executable('ag')
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts = '--nocolor --nogroup --hidden --ignore-case --ignore tags'
   let g:unite_source_grep_recursive_opt = ''
-elseif executable('ack-grep')
-  let g:unite_source_grep_command = 'ack-grep'
+elseif executable('ack')
+  let g:unite_source_grep_command = 'ack'
   let g:unite_source_grep_default_opts =
-  \ '--no-heading --no-color -a -H'
+  \ '--no-heading --no-color -H'
   let g:unite_source_grep_recursive_opt = ''
 endif
 
 nno [unite] <Nop>
+nmap f [unite]
 
 nno <silent> <C-p> :Unite -buffer-name=files buffer file_rec/async<cr>
-nno <silent> <leader>/ :<C-u>Unite grep:.<cr>
-nno <silent> <leader>y :<C-u>Unite history/yank<cr>
-nno <silent> <C-o> :<C-u>Unite -buffer-name=outline -vertical outline<cr>
+nno <silent> [unite]/ :<C-u>Unite grep:.<cr>
+nno <silent> [unite]y :<C-u>Unite history/yank<cr>
+nno <silent> [unite]t :<C-u>UniteTodoAddSimple<cr>
+nno <silent> [unite]T :<C-u>UniteTodoAddBuffer<cr>
 
 " Function that only triggers when unite opens
-autocmd MyAutoCmd FileType unite call s:unite_settings()
+au FileType unite call s:unite_settings()
 function! s:unite_settings()
   " exit with esc
   nmap <buffer> <ESC> <Plug>(unite_exit)
