@@ -22,9 +22,10 @@ Plugin 'Shougo/neomru.vim'
 " Unite plugins
 Plugin 'kannokanno/unite-todo'
 " Everything else
-Plugin 'luckydev/150colors'
+Plugin 'chriskempson/base16-vim'
 Plugin 'sheerun/vim-polyglot'
-Plugin 'bling/vim-airline'
+Plugin 'itchyny/lightline.vim'
+Plugin 'bling/vim-bufferline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'scrooloose/syntastic'

@@ -1,4 +1,6 @@
 " Neocomplete
+set completeopt-=preview
+
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#force_overwrite_completefunc = 0
 let g:neocomplete#enable_prefetch = 1
@@ -10,6 +12,7 @@ let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
 let g:neocomplete#ctags_command = 'git ctags'
+let g:neocomplete#enable_auto_close_preview = 1
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
   return neocomplete#close_popup() . "\<CR>"
@@ -28,6 +31,7 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType ruby,eruby setlocal omnifunc=syntaxcomplete#Complete
 
 " Enable heavy omni completion.
 if !exists('g:neocomplete#sources#omni#input_patterns')

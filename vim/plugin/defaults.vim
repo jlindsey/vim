@@ -16,11 +16,12 @@ set modeline " Allow modelines
 set autoread
 set autowrite
 set grepprg=ack
+
 " Color
 set background=dark
-"colorscheme railscasts2
-"colorscheme solarized
-colorscheme vividchalk
+"let g:base16_shell_path="~/.config/base16-builder/output/shell/"
+colorscheme base16-monokai
+
 " show hidden characters
 set list
 set listchars=eol:¬,tab:→\ ,extends:>,precedes:<,trail:…
@@ -96,10 +97,3 @@ vno <C-c> "+y
 " Command Abbreviations
 ca !! VimProcBang
 
-" Idiot
-com W w
-com Q q
-com Wq wq
-com WQ wq
-com Qw wq
-com QW wq
