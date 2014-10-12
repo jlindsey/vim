@@ -13,6 +13,7 @@ set wildmode=list:longest
 set ttyfast " Force vim to think we're on a fast tty connection (we are)
 set visualbell " visual bell instead of audio
 set modeline " Allow modelines
+set modelines=5
 set autoread
 set autowrite
 set grepprg=ack
