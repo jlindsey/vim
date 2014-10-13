@@ -84,11 +84,6 @@ nmap <leader>bl :ls<cr>
 set cryptmethod=blowfish
 au BufReadPost * if &key != "" | set noswapfile nowritebackup viminfo= nobackup noshelltemp history=0 secure | endif
 
-" ctags
-set tags=.git/tags,tags
-nno <silent> <leader>ct :silent Dispatch! git ctags<cr>
-au BufWrite * silent Dispatch! git ctags
-
 " reload current vimrc
 nmap <leader>R :so $MYVIMRC<cr>
 
